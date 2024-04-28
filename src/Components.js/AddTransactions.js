@@ -1,34 +1,28 @@
-import React,{useState} from "react"
+// AddTransactions.js
+import React from 'react';
 
-function AddTransaction(){
-    const [date, setDate] = useState("")
-    const [description, setDescription] = useState("")
-    const [category, setCategory] = useState("")
-    const [amount, setAmount] = useState("")
-    const [submittedForms, setSubmittedForms] = useState([])
+function AddTransactions({ onAddTransaction }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newTransaction = {
+      category: formData.get('category'),
+      amount: parseFloat(formData.get('amount')),
+      description: formData.get('description'),
+      date: formData.get('date')
+    };
+    onAddTransaction(newTransaction);
+  };
 
-    function handleSubmit(e){
-        e.preventDefault()
-        const newForm = {date, description, category, amount}
-        setSubmittedForms([...submittedForms, newForm])
-        setDate('')
-        setDescription('')
-        setCategory('')
-        setAmount('')
-
-    }
-
-    return(
-        <form  onSubmit={handleSubmit}>
-            <input type="date" placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)}/>
-            <input type="text" placeholder="Category" value={category} onChange={(e) => setCategory(e.target.value)}/>
-            <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
-            <input type="number" placeholder="Amount" value={amount} onChange={(e)=> setAmount(e.target.value)}/>
-            <button type="submit">Add Transactions</button>
-
-
-        </form>
-    )
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="category" placeholder="Category" required />
+      <input type="number" name="amount" placeholder="Amount" required />
+      <input type="text" name="description" placeholder="Description" required />
+      <input type="date" name="date" placeholder="Date" required />
+      <button type="submit">Add Transaction</button>
+    </form>
+  );
 }
 
-export default AddTransaction
+export default AddTransactions;
