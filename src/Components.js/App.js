@@ -1,6 +1,6 @@
-// App.js
+
 import React, { useState } from 'react';
-import Header from './Header'; // Make sure to import Header and SearchBar if you have them
+import Header from './Header'; 
 import SearchBar from './SearchBar';
 import AddTransactions from './AddTransactions';
 import TransactionsTable from './TransactionsTable';
@@ -20,7 +20,8 @@ function App() {
 
   return (
     <div className="App">
-     
+      <Header />
+      <SearchBar />
       <AddTransactions onAddTransaction={handleAddTransaction} />
       <TransactionsTable transactions={transactions} />
     </div>
