@@ -15,14 +15,15 @@ function AddTransactions({ onAddTransaction }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="date" name="date" placeholder="Date" required />
-      <input type="text" name="category" placeholder="Category" required />
-      <input type="text" name="description" placeholder="Description" required />
-      <input type="number" name="amount" placeholder="Amount" required />
+    <form onSubmit={handleSubmit} >
+        Date
+      <input type="date" name="date" placeholder="Date" className='input' required />
+      <input type="text" name="category" placeholder="Category" className='input' required />
+      <input type="text" name="description" placeholder="Description" className='input' required />
+      <input type="number" name="amount" placeholder="Amount" className='input' required />
       
-      
-      <button type="submit">Add Transaction</button>
+      <br />
+      <button type="submit" className='btn'>Add Transaction</button>
     </form>
   );
 }

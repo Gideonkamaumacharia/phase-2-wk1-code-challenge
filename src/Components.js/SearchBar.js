@@ -1,24 +1,23 @@
-
 import React, { useState } from 'react';
 
-function SearchBar() {
+function SearchBar({ handleSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = (e) => {
     const term = e.target.value;
-    setSearchTerm(prev => {
-        return prev.filter((item) => item.toLowerCase().includes(term.toLowerCase()))
-    });
-
+    setSearchTerm(term);
+    handleSearch(term);
   };
 
   return (
-    <input
+   <div className='searchField'>
+     <input className='search'
       type="text"
-      placeholder="Search your recent transaction "
+      placeholder="Search your recent transaction"
       value={searchTerm}
       onChange={handleChange}
-    />
+    />    
+   </div>
   );
 }
 

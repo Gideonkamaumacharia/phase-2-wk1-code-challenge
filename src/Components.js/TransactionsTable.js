@@ -3,19 +3,19 @@ import React from 'react';
 
 function TransactionsTable({ transactions }) {
   return (
-    <table>
+    <table >
       <thead>
-        <tr>
-          <th>Date</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Amount</th>
+        <tr className='tableHeaders'>
+          <th className='date'>Date</th>
+          <th className='category'>Category</th>
+          <th className='description'>Description</th>
+          <th className='amount'>Amount</th>
           
         </tr>
       </thead>
       <tbody>
         {transactions.map((transaction, index) => (
-          <tr key={index}>
+          <tr key={index} className='tableData'>
             <td>{transaction.date}</td>
             <td>{transaction.category}</td>
             <td>{transaction.description}</td>
