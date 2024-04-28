@@ -1,4 +1,4 @@
-// AddTransactions.js
+
 import React from 'react';
 
 function AddTransactions({ onAddTransaction }) {
@@ -16,10 +16,12 @@ function AddTransactions({ onAddTransaction }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="category" placeholder="Category" required />
-      <input type="number" name="amount" placeholder="Amount" required />
-      <input type="text" name="description" placeholder="Description" required />
       <input type="date" name="date" placeholder="Date" required />
+      <input type="text" name="category" placeholder="Category" required />
+      <input type="text" name="description" placeholder="Description" required />
+      <input type="number" name="amount" placeholder="Amount" required />
+      
+      
       <button type="submit">Add Transaction</button>
     </form>
   );

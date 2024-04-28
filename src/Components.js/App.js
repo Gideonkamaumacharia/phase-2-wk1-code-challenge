@@ -14,14 +14,17 @@ function App() {
     { category: "Chipotle", amount: 16, description: "food", date: "2024-04-26" }
   ]);
 
+
   const handleAddTransaction = (newTransaction) => {
     setTransactions([...transactions, newTransaction]);
   };
+   
+ 
 
   return (
     <div className="App">
       <Header />
-      <SearchBar />
+      <SearchBar  />
       <AddTransactions onAddTransaction={handleAddTransaction} />
       <TransactionsTable transactions={transactions} />
     </div>

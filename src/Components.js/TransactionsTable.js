@@ -6,19 +6,20 @@ function TransactionsTable({ transactions }) {
     <table>
       <thead>
         <tr>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Description</th>
           <th>Date</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+          
         </tr>
       </thead>
       <tbody>
         {transactions.map((transaction, index) => (
           <tr key={index}>
-            <td>{transaction.category}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.description}</td>
             <td>{transaction.date}</td>
+            <td>{transaction.category}</td>
+            <td>{transaction.description}</td>
+            <td>{transaction.amount}</td>
           </tr>
         ))}
       </tbody>

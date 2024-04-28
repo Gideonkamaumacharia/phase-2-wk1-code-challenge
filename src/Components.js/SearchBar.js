@@ -1,12 +1,23 @@
-import React from "react"
 
-function SearchBar(){
+import React, { useState } from 'react';
 
-    return(
-        <form>
-           <input type="text" placeholder="search your recent transaction" /> 
-        </form>
-    )
+function SearchBar({ handleSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    handleSearch(term);
+  };
+
+  return (
+    <input
+      type="text"
+      placeholder="Search..."
+      value={searchTerm}
+      onChange={handleChange}
+    />
+  );
 }
 
-export default SearchBar
+export default SearchBar;
