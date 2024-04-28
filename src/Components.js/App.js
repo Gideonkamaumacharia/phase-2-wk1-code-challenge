@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar  />
+      <SearchBar handleSearch={transactions} />
       <AddTransactions onAddTransaction={handleAddTransaction} />
       <TransactionsTable transactions={transactions} />
     </div>
