@@ -1,6 +1,8 @@
 import React from "react"
 
 function TransactionsTable({transactions}){
+    if (!transactions || transactions.length === 0) {
+        return <div>No transactions available.</div>;}
 
     return(
         <table>

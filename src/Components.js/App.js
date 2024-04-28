@@ -1,5 +1,7 @@
-import './App.css';
+import AddTransactions from './AddTransactions';
 import Header from "./Header"
+import TransactionsTable from "./TransactionsTable"
+import SearchBar from "./SearchBar"
 
 const transactions = [
   {
@@ -13,6 +15,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <SearchBar />
+      <AddTransactions category={transactions.category} amount={transactions.amount} description={transactions.description} date={transactions.date}/>
+      <TransactionsTable category={transactions.category} amount={transactions.amount} description={transactions.description} date={transactions.date}/>
       
     </div>
   );
